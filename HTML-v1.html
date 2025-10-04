@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="pt-BR" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Guia de Referência WebDev</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #111827; /* bg-gray-900 */
+            color: #d1d5db; /* text-gray-300 */
+        }
+        /* Estilos para a barra de rolagem */
+        ::-webkit-scrollbar {
+            width: 8px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #1f2937; /* bg-gray-800 */
+        }
+        ::-webkit-scrollbar-thumb {
+            background: #4b5563; /* bg-gray-600 */
+            border-radius: 4px;
+        }
+        ::-webkit-scrollbar-thumb:hover {
+            background: #6b7280; /* bg-gray-500 */
+        }
+        /* Foco visível para acessibilidade */
+        .nav-link:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+            border-radius: 0.375rem;
+        }
+        .copy-btn:focus-visible {
+            outline: 2px solid #3b82f6;
+            outline-offset: 2px;
+        }
+    </style>
+</head>
+<body class="flex min-h-screen">
+    <!-- Menu Lateral -->
+    <aside class="fixed inset-y-0 left-0 z-30 w-64 bg-gray-900/80 backdrop-blur-lg border-r border-gray-700/60 transform -translate-x-full md:translate-x-0 transition-transform duration-300 ease-in-out md:flex flex-col" id="sidebar">
+        <div class="p-6 border-b border-gray-700/60">
+            <h2 class="text-xl font-bold text-white">Guia WebDev</h2>
+            <p class="text-sm text-gray-400 mt-1">De Dev para Dev</p>
+        </div>
+        <nav class="flex-1 p-4 space-y-2">
+            <h3 class="px-2 text-xs font-semibold text-gray-500 uppercase tracking-wider">Front-end</h3>
+            <a href="#html" class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md bg-gray-800 text-white">
+                <svg class="h-5 w-5 mr-3 text-blue-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M10 20l4-16m4 4l4 4-4 4M6 16l-4-4 4-4"></path></svg>
+                HTML
+            </a>
+            <!-- Links para outras seções virão aqui -->
+            <a href="#css" class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-300 hover:bg-gray-700 hover:text-white">
+                <svg class="h-5 w-5 mr-3 text-gray-400 group-hover:text-indigo-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M7 21a4 4 0 01-4-4V5a2 2 0 012-2h4a2 2 0 012 2v12a4 4 0 01-4 4zm0 0h12a2 2 0 002-2v-4a2 2 0 00-2-2h-2.343M11 7.343l1.657-1.657a2 2 0 012.828 0l2.829 2.829a2 2 0 010 2.828l-8.486 8.485M7 17h.01"></path></svg>
+                CSS (em breve)
+            </a>
+             <a href="#react" class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-300 hover:bg-gray-700 hover:text-white">
+                <svg class="h-5 w-5 mr-3 text-gray-400 group-hover:text-cyan-400" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="2"></circle><path d="M16.24 7.76l-2.12 6.36-6.36 2.12 2.12-6.36 6.36-2.12z"></path><path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path></svg>
+                React (em breve)
+            </a>
+            <h3 class="px-2 pt-4 text-xs font-semibold text-gray-500 uppercase tracking-wider">Back-end</h3>
+             <a href="#nodejs" class="nav-link group flex items-center px-3 py-2 text-sm font-medium rounded-md text-gray-300 hover:bg-gray-700 hover:text-white">
+                 <svg class="h-5 w-5 mr-3 text-gray-400 group-hover:text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z"></path></svg>
+                Node.js (em breve)
+            </a>
+        </nav>
+    </aside>
+
+    <!-- Botão para abrir o menu em telas pequenas -->
+    <button id="menu-toggle" class="fixed top-4 left-4 z-40 md:hidden p-2 rounded-md bg-gray-800 text-white hover:bg-gray-700">
+        <svg class="h-6 w-6" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M4 6h16M4 12h16m-7 6h7"></path></svg>
+    </button>
+    
+    <!-- Overlay para fechar o menu -->
+    <div id="overlay" class="fixed inset-0 bg-black/50 z-20 hidden md:hidden"></div>
+
+    <!-- Conteúdo Principal -->
+    <main class="w-full md:pl-64 transition-all duration-300 ease-in-out">
+        <div class="p-6 md:p-12">
+            <!-- Introdução -->
+            <section class="mb-16">
+                <h1 class="text-4xl md:text-5xl font-bold text-white mb-4">Guia de Referência WebDev</h1>
+                <p class="text-lg text-gray-400">
+                    Um guia rápido e prático com os principais comandos e conceitos de desenvolvimento web,
+                    feito para consulta rápida no dia a dia. Navegue pelos tópicos no menu lateral.
+                </p>
+            </section>
+            
+            <!-- Seção HTML -->
+            <section id="html" class="mb-12">
+                <h2 class="text-3xl font-bold text-white mb-6 border-l-4 border-blue-500 pl-4">HTML</h2>
+                <p class="mb-8">
+                    HTML (HyperText Markup Language) é a linguagem de marcação padrão para criar páginas web. Ela descreve a estrutura de uma página usando elementos (tags) que o navegador interpreta para renderizar o conteúdo.
+                </p>
+
+                <!-- Estrutura Básica -->
+                <div class="bg-gray-800/50 rounded-lg shadow-lg mb-8">
+                    <div class="p-4 border-b border-gray-700/60"><h3 class="font-semibold text-white">Estrutura Básica de um Documento</h3></div>
+                    <div class="p-4">
+                        <p class="text-sm text-gray-400 mb-4">Todo documento HTML segue uma estrutura fundamental que inclui a declaração do tipo de documento, e as tags `<html>`, `<head>`, e `<body>`.</p>
+                        <div class="bg-gray-900 rounded-md">
+                            <div class="flex justify-between items-center px-4 py-2 bg-gray-700/50 rounded-t-md">
+                                <span class="text-xs font-mono text-gray-400">HTML</span>
+                                <button class="copy-btn text-xs text-gray-300 hover:text-white flex items-center">
+                                    <svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar</button>
+                            </div>
+                            <pre class="p-4 text-sm overflow-x-auto"><code class="language-html">&lt;!DOCTYPE html&gt;
+&lt;html lang="pt-BR"&gt;
+&lt;head&gt;
+    &lt;meta charset="UTF-8"&gt;
+    &lt;meta name="viewport" content="width=device-width, initial-scale=1.0"&gt;
+    &lt;title&gt;Título da Página&lt;/title&gt;
+&lt;/head&gt;
+&lt;body&gt;
+    &lt;h1&gt;Olá, Mundo!&lt;/h1&gt;
+    &lt;p&gt;Este é o conteúdo visível da sua página.&lt;/p&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Títulos, Parágrafos e Links -->
+                <div class="bg-gray-800/50 rounded-lg shadow-lg mb-8">
+                    <div class="p-4 border-b border-gray-700/60"><h3 class="font-semibold text-white">Elementos de Texto Comuns</h3></div>
+                    <div class="p-4">
+                        <p class="text-sm text-gray-400 mb-4">Tags para estruturar o texto: `<h1>`-`<h6>` para títulos, `<p>` para parágrafos, `<a>` para links, e `<strong>` ou `<em>` para dar ênfase.</p>
+                        <div class="bg-gray-900 rounded-md">
+                             <div class="flex justify-between items-center px-4 py-2 bg-gray-700/50 rounded-t-md"><span class="text-xs font-mono text-gray-400">HTML</span><button class="copy-btn text-xs text-gray-300 hover:text-white flex items-center"><svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar</button></div>
+                            <pre class="p-4 text-sm overflow-x-auto"><code class="language-html">&lt;h1&gt;Título Principal&lt;/h1&gt;
+&lt;p&gt;Este é um parágrafo com &lt;strong&gt;texto em negrito&lt;/strong&gt; e &lt;em&gt;itálico&lt;/em&gt;.&lt;/p&gt;
+&lt;a href="https://www.google.com" target="_blank"&gt;Link para o Google (abre em nova aba)&lt;/a&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Listas -->
+                <div class="bg-gray-800/50 rounded-lg shadow-lg mb-8">
+                    <div class="p-4 border-b border-gray-700/60"><h3 class="font-semibold text-white">Listas Ordenadas e Não Ordenadas</h3></div>
+                    <div class="p-4">
+                         <p class="text-sm text-gray-400 mb-4">Use `<ol>` para listas ordenadas (numeradas) e `<ul>` para listas não ordenadas (com marcadores). Os itens são definidos por `<li>`.</p>
+                        <div class="bg-gray-900 rounded-md">
+                             <div class="flex justify-between items-center px-4 py-2 bg-gray-700/50 rounded-t-md"><span class="text-xs font-mono text-gray-400">HTML</span><button class="copy-btn text-xs text-gray-300 hover:text-white flex items-center"><svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar</button></div>
+                            <pre class="p-4 text-sm overflow-x-auto"><code class="language-html">&lt;h4&gt;Lista de Compras&lt;/h4&gt;
+&lt;ul&gt;
+  &lt;li&gt;Maçãs&lt;/li&gt;
+  &lt;li&gt;Bananas&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h4&gt;Passos para fazer café&lt;/h4&gt;
+&lt;ol&gt;
+  &lt;li&gt;Ferver a água&lt;/li&gt;
+  &lt;li&gt;Coar o café&lt;/li&gt;
+&lt;/ol&gt;</code></pre>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Tabelas -->
+                <div class="bg-gray-800/50 rounded-lg shadow-lg mb-8">
+                    <div class="p-4 border-b border-gray-700/60"><h3 class="font-semibold text-white">Tabelas</h3></div>
+                    <div class="p-4">
+                         <p class="text-sm text-gray-400 mb-4">Para exibir dados tabulares. Use `<table>`, `<thead>` para o cabeçalho, `<tbody>` para o corpo, `<tr>` para linhas, `<th>` para células de cabeçalho e `<td>` para células de dados.</p>
+                        <div class="bg-gray-900 rounded-md">
+                             <div class="flex justify-between items-center px-4 py-2 bg-gray-700/50 rounded-t-md"><span class="text-xs font-mono text-gray-400">HTML</span><button class="copy-btn text-xs text-gray-300 hover:text-white flex items-center"><svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar</button></div>
+                            <pre class="p-4 text-sm overflow-x-auto"><code class="language-html">&lt;table&gt;
+  &lt;thead&gt;
+    &lt;tr&gt;
+      &lt;th&gt;Nome&lt;/th&gt;
+      &lt;th&gt;Idade&lt;/th&gt;
+    &lt;/tr&gt;
+  &lt;/thead&gt;
+  &lt;tbody&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Ana&lt;/td&gt;
+      &lt;td&gt;25&lt;/td&gt;
+    &lt;/tr&gt;
+    &lt;tr&gt;
+      &lt;td&gt;Carlos&lt;/td&gt;
+      &lt;td&gt;32&lt;/td&gt;
+    &lt;/tr&gt;
+  &lt;/tbody&gt;
+&lt;/table&gt;</code></pre>
+                        </div>
+                        <h4 class="mt-6 mb-2 font-semibold text-white">Resultado:</h4>
+                        <div class="overflow-x-auto rounded-md border border-gray-700">
+                            <table class="w-full text-sm text-left">
+                                <thead class="bg-gray-700/50 text-xs uppercase text-gray-300">
+                                    <tr><th scope="col" class="px-6 py-3">Nome</th><th scope="col" class="px-6 py-3">Idade</th></tr>
+                                </thead>
+                                <tbody>
+                                    <tr class="border-b border-gray-700"><td class="px-6 py-4">Ana</td><td class="px-6 py-4">25</td></tr>
+                                    <tr><td class="px-6 py-4">Carlos</td><td class="px-6 py-4">32</td></tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Mídia -->
+                <div class="bg-gray-800/50 rounded-lg shadow-lg mb-8">
+                    <div class="p-4 border-b border-gray-700/60"><h3 class="font-semibold text-white">Mídia: Imagens, Áudio e Vídeo</h3></div>
+                    <div class="p-4">
+                         <p class="text-sm text-gray-400 mb-4">Incorpore mídias em sua página com as tags `<img>`, `<audio>` e `<video>`. O atributo `controls` é essencial para a interatividade do usuário.</p>
+                        <div class="bg-gray-900 rounded-md">
+                             <div class="flex justify-between items-center px-4 py-2 bg-gray-700/50 rounded-t-md"><span class="text-xs font-mono text-gray-400">HTML</span><button class="copy-btn text-xs text-gray-300 hover:text-white flex items-center"><svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar</button></div>
+                            <pre class="p-4 text-sm overflow-x-auto"><code class="language-html">&lt;!-- Imagem com texto alternativo --&gt;
+&lt;img src="https://placehold.co/600x300/1f2937/d1d5db?text=Imagem+Exemplo" alt="Descrição da imagem"&gt;
+
+&lt;!-- Player de áudio com controles --&gt;
+&lt;audio controls src="/caminho/para/audio.mp3"&gt;&lt;/audio&gt;
+
+&lt;!-- Player de vídeo com controles --&gt;
+&lt;video controls width="100%" src="/caminho/para/video.mp4"&gt;&lt;/video&gt;</code></pre>
+                        </div>
+                        <h4 class="mt-6 mb-2 font-semibold text-white">Resultado:</h4>
+                        <div class="space-y-4">
+                           <img class="rounded-md w-full max-w-md" src="https://placehold.co/600x300/1f2937/d1d5db?text=Imagem+Exemplo" alt="Exemplo de imagem renderizada">
+                           <div class="bg-gray-700/50 p-3 rounded-md text-sm text-gray-400">Aqui apareceria o player de áudio com controles.</div>
+                           <div class="bg-gray-700/50 p-3 rounded-md text-sm text-gray-400">Aqui apareceria o player de vídeo com controles.</div>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Formulários -->
+                 <div class="bg-gray-800/50 rounded-lg shadow-lg mb-8">
+                    <div class="p-4 border-b border-gray-700/60"><h3 class="font-semibold text-white">Formulários</h3></div>
+                    <div class="p-4">
+                         <p class="text-sm text-gray-400 mb-4">Essenciais para coletar dados do usuário. O formulário é definido pela tag `<form>` e contém vários elementos de entrada de dados.</p>
+                        <div class="bg-gray-900 rounded-md">
+                             <div class="flex justify-between items-center px-4 py-2 bg-gray-700/50 rounded-t-md"><span class="text-xs font-mono text-gray-400">HTML</span><button class="copy-btn text-xs text-gray-300 hover:text-white flex items-center"><svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar</button></div>
+                            <pre class="p-4 text-sm overflow-x-auto"><code class="language-html">&lt;form action="/processa-dados" method="post"&gt;
+  &lt;label for="nome"&gt;Nome:&lt;/label&gt;
+  &lt;input type="text" id="nome" name="nome_usuario"&gt;
+
+  &lt;label for="mensagem"&gt;Mensagem:&lt;/label&gt;
+  &lt;textarea id="mensagem" name="mensagem_usuario"&gt;&lt;/textarea&gt;
+
+  &lt;label for="servico"&gt;Serviço:&lt;/label&gt;
+  &lt;select id="servico" name="servico_selecionado"&gt;
+    &lt;option value="dev"&gt;Desenvolvimento&lt;/option&gt;
+    &lt;option value="design"&gt;Design UX/UI&lt;/option&gt;
+  &lt;/select&gt;
+
+  &lt;button type="submit"&gt;Enviar&lt;/button&gt;
+&lt;/form&gt;</code></pre>
+                        </div>
+                        <h4 class="mt-6 mb-2 font-semibold text-white">Resultado:</h4>
+                        <form class="p-4 border border-gray-700 rounded-md space-y-4 max-w-md">
+                            <div>
+                                <label for="nome-ex" class="block mb-1 text-sm font-medium">Nome:</label>
+                                <input type="text" id="nome-ex" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2 text-sm focus:ring-blue-500 focus:border-blue-500">
+                            </div>
+                            <div>
+                                <label for="mensagem-ex" class="block mb-1 text-sm font-medium">Mensagem:</label>
+                                <textarea id="mensagem-ex" rows="3" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2 text-sm focus:ring-blue-500 focus:border-blue-500"></textarea>
+                            </div>
+                            <div>
+                                <label for="servico-ex" class="block mb-1 text-sm font-medium">Serviço:</label>
+                                <select id="servico-ex" class="w-full bg-gray-700 border border-gray-600 rounded-md p-2 text-sm focus:ring-blue-500 focus:border-blue-500">
+                                    <option>Desenvolvimento</option>
+                                    <option>Design UX/UI</option>
+                                </select>
+                            </div>
+                            <button type="button" class="w-full bg-blue-600 hover:bg-blue-700 text-white font-semibold py-2 px-4 rounded-md transition-colors">Enviar</button>
+                        </form>
+                    </div>
+                </div>
+
+            </section>
+            
+            <!-- Outras seções virão aqui -->
+        </div>
+    </main>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', () => {
+            // Funcionalidade do botão de copiar
+            const allCopyButtons = document.querySelectorAll('.copy-btn');
+            allCopyButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const codeBlock = button.closest('.bg-gray-900').querySelector('pre code');
+                    const codeToCopy = codeBlock.innerText;
+                    
+                    const textArea = document.createElement('textarea');
+                    textArea.value = codeToCopy;
+                    document.body.appendChild(textArea);
+                    textArea.select();
+                    try {
+                        document.execCommand('copy');
+                        button.innerHTML = `<svg class="h-4 w-4 mr-1.5 text-green-400" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M5 13l4 4L19 7"></path></svg>Copiado!`;
+                    } catch (err) {
+                        console.error('Falha ao copiar', err);
+                         button.innerText = 'Erro';
+                    }
+                    document.body.removeChild(textArea);
+
+                    setTimeout(() => {
+                         button.innerHTML = `<svg class="h-4 w-4 mr-1.5" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M8 16H6a2 2 0 01-2-2V6a2 2 0 012-2h8a2 2 0 012 2v2m-6 12h8a2 2 0 002-2v-8a2 2 0 00-2-2h-8a2 2 0 00-2 2v8a2 2 0 002 2z"></path></svg>Copiar`;
+                    }, 2000);
+                });
+            });
+
+            // Menu mobile
+            const menuToggle = document.getElementById('menu-toggle');
+            const sidebar = document.getElementById('sidebar');
+            const overlay = document.getElementById('overlay');
+            const navLinks = document.querySelectorAll('#sidebar a');
+
+            function openMenu() { sidebar.classList.remove('-translate-x-full'); overlay.classList.remove('hidden'); }
+            function closeMenu() { sidebar.classList.add('-translate-x-full'); overlay.classList.add('hidden'); }
+
+            menuToggle.addEventListener('click', (e) => { e.stopPropagation(); sidebar.classList.contains('-translate-x-full') ? openMenu() : closeMenu(); });
+            overlay.addEventListener('click', closeMenu);
+            navLinks.forEach(link => { link.addEventListener('click', () => { if (window.innerWidth < 768) { closeMenu(); } }); });
+            
+            // Ativar link do menu com base no scroll
+            const sections = document.querySelectorAll('section[id]');
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const id = entry.target.id;
+                        document.querySelectorAll('.nav-link').forEach(link => {
+                            link.classList.remove('bg-gray-800', 'text-white');
+                            link.classList.add('text-gray-300', 'hover:bg-gray-700', 'hover:text-white');
+                            if (link.getAttribute('href') === `#${id}`) {
+                                link.classList.add('bg-gray-800', 'text-white');
+                                link.classList.remove('text-gray-300');
+                            }
+                        });
+                    }
+                });
+            }, { rootMargin: '-50% 0px -50% 0px' });
+            sections.forEach(section => { observer.observe(section); });
+        });
+    </script>
+</body>
+</html>
+
