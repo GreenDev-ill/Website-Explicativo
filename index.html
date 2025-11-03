@@ -1,0 +1,759 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Website Explicativo: HTML, CSS & JS</title>
+
+    <link rel="stylesheet" href="style.css">
+    <script src="script.js" defer></script>
+</head>
+<body>
+
+    <header>
+        <h1>Website Explicativo: HTML, CSS & JS</h1>
+        <nav>
+            <a href="#html">HTML</a>
+            <a href="#css">CSS</a>
+            <a href="#js">JavaScript</a>
+        </nav>
+    </header>
+
+    <main>
+        
+        <section id="html" class="card">
+            <h2>HTML: A Estrutura</h2>
+            
+            <p>
+                O <strong>HTML</strong> (HyperText Markup Language) é a linguagem de marcação que forma a <strong>espinha dorsal</strong> de toda a web. Ele diz ao navegador <strong>o que</strong> é cada pedaço de conteúdo (um título, um parágrafo, uma imagem, etc.) e como ele deve ser estruturado.
+            </p>
+
+            <h3>Exemplo Básico de Sintaxe HTML</h3>
+            <p>O HTML usa "tags" (etiquetas) envoltas em <code class="inline-code">&lt;</code> e <code class="inline-code">&gt;</code>. A maioria das tags tem uma de abertura (ex: <code class="inline-code">&lt;p&gt;</code>) e uma de fechamento (ex: <code class="inline-code">&lt;/p&gt;</code>).</p>
+            <pre class="code-snippet"><code>
+<span class="comment">&lt;!-- Este é um comentário em HTML. O navegador o ignora. --&gt;</span>
+<span class="tag">&lt;!DOCTYPE html&gt;</span>
+<span class="tag">&lt;html <span class="attr">lang=</span><span class="value">"pt-BR"</span>&gt;</span>
+  <span class="tag">&lt;head&gt;</span>
+    <span class="tag">&lt;meta <span class="attr">charset=</span><span class="value">"UTF-8"</span>&gt;</span>
+    <span class="tag">&lt;title&gt;</span>Meu Site<span class="tag">&lt;/title&gt;</span>
+  <span class="tag">&lt;/head&gt;</span>
+  <span class="tag">&lt;body&gt;</span>
+    <span class="tag">&lt;h1&gt;</span>Este é um Título Principal<span class="tag">&lt;/h1&gt;</span>
+    <span class="tag">&lt;p&gt;</span>Este é um parágrafo.<span class="tag">&lt;/p&gt;</span>
+  <span class="tag">&lt;/body&gt;</span>
+<span class="tag">&lt;/html&gt;</span>
+            </code></pre>
+            
+            <h3>Tags de Texto Básicas</h3>
+            <p>Estas são as tags mais comuns para estruturar texto em uma página.</p>
+
+            <h4>As Tags &lt;h1&gt; a &lt;h6&gt; (Títulos)</h4>
+            <p>Definem títulos e subtítulos, onde <code class="inline-code">&lt;h1&gt;</code> é o mais importante (geralmente usado apenas uma vez por página) e <code class="inline-code">&lt;h6&gt;</code> é o menos importante.</p>
+            <pre class="code-snippet"><code>
+<span class="tag">&lt;h1&gt;</span>Título Nível 1<span class="tag">&lt;/h1&gt;</span>
+<span class="tag">&lt;h2&gt;</span>Título Nível 2<span class="tag">&lt;/h2&gt;</span>
+<span class="tag">&lt;h3&gt;</span>Título Nível 3<span class="tag">&lt;/h3&gt;</span>
+            </code></pre>
+            <div class="example-box">
+                <h1>Título Nível 1</h1>
+                <h2>Título Nível 2</h2>
+                <h3>Título Nível 3</h3>
+                <h4>Título Nível 4</h4>
+                <h5>Título Nível 5</h5>
+                <h6>Título Nível 6</h6>
+            </div>
+            
+            <h4>A Tag &lt;p&gt; (Parágrafo)</h4>
+            <p>Usada para agrupar blocos de texto em parágrafos.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;p&gt;</span>Este é um parágrafo de texto. Ele terá um espaçamento automático acima e abaixo.<span class="tag">&lt;/p&gt;</span></code></pre>
+            <div class="example-box">
+                <p>Este é um parágrafo de texto. Ele terá um espaçamento automático acima e abaixo.</p>
+            </div>
+            
+            <h4>A Tag &lt;br&gt; (Quebra de Linha)</h4>
+            <p>Insere uma única quebra de linha. É uma tag "vazia", o que significa que não tem tag de fechamento.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;p&gt;</span>Esta é a primeira linha.<span class="tag">&lt;br&gt;</span>Esta é a segunda linha.<span class="tag">&lt;/p&gt;</span></code></pre>
+            <div class="example-box">
+                <p>Esta é a primeira linha.<br>Esta é a segunda linha.</p>
+            </div>
+            
+            <h4>A Tag &lt;hr&gt; (Linha Horizontal)</h4>
+            <p>Cria uma linha horizontal, usada para separar tematicamente o conteúdo. Também é uma tag vazia.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;p&gt;</span>Conteúdo acima.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;hr&gt;</span>
+<span class="tag">&lt;p&gt;</span>Conteúdo abaixo.<span class="tag">&lt;/p&gt;</span></code></pre>
+            <div class="example-box">
+                <p>Conteúdo acima.</p>
+                <hr>
+                <p>Conteúdo abaixo.</p>
+            </div>
+
+            <hr class="section-divider">
+            
+            <h3>Tags de Formatação de Texto (Inline)</h3>
+            <p>Estas tags são usadas "em linha" (inline) para estilizar ou dar significado a partes específicas de um texto, sem quebrar a linha.</p>
+
+            <h4>&lt;strong&gt; e &lt;b&gt; (Importante / Negrito)</h4>
+            <p><code class="inline-code">&lt;strong&gt;</code> é semântico: indica que o texto tem grande importância ou seriedade. Os navegadores o renderizam em negrito.</p>
+            <p><code class="inline-code">&lt;b&gt;</code> é apenas estilístico: indica que o texto deve ser em negrito (bold), sem implicar importância.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;p&gt;</span>Use <span class="tag">&lt;strong&gt;</span>para coisas importantes.<span class="tag">&lt;/strong&gt;&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>Use <span class="tag">&lt;b&gt;</span>apenas para estilo<span class="tag">&lt;/b&gt;.<span class="tag">&lt;/p&gt;</span></code></pre>
+            <div class="example-box">
+                <p>Use <strong>para coisas importantes.</strong></p>
+                <p>Use <b>apenas para estilo</b>.</p>
+            </div>
+            
+            <h4>&lt;em&gt; e &lt;i&gt; (Ênfase / Itálico)</h4>
+            <p><code class="inline-code">&lt;em&gt;</code> é semântico: indica ênfase (emphasis) no texto, como uma mudança de tom. Os navegadores o renderizam em itálico.</p>
+            <p><code class="inline-code">&lt;i&gt;</code> é estilístico: indica que o texto deve ser em itálico (italic), como para um termo estrangeiro ou nome de navio.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;p&gt;</span>Você <span class="tag">&lt;em&gt;</span>precisa<span class="tag">&lt;/em&gt;</span> ver isso.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>O termo <span class="tag">&lt;i&gt;</span>"semântica"<span class="tag">&lt;/i&gt;</span> é importante.<span class="tag">&lt;/p&gt;</span></code></pre>
+            <div class="example-box">
+                <p>Você <em>precisa</em> ver isso.</p>
+                <p>O termo <i>"semântica"</i> é importante.</p>
+            </div>
+
+            <h4>&lt;code&gt;, &lt;sub&gt;, &lt;sup&gt;</h4>
+            <ul>
+                <li><code class="inline-code">&lt;code&gt;</code>: Marca um pedaço de código de computador.</li>
+                <li><code class="inline-code">&lt;sub&gt;</code>: Marca texto subscrito (subscript), como em H₂O.</li>
+                <li><code class="inline-code">&lt;sup&gt;</code>: Marca texto sobrescrito (superscript), como em 2¹⁰.</li>
+            </ul>
+            <pre class="code-snippet"><code><span class="tag">&lt;p&gt;</span>A função é <span class="tag">&lt;code&gt;</span>alert()<span class="tag">&lt;/code&gt;</span>.<span class="tag">&lt;/p&gt;</span>
+<span class="tag">&lt;p&gt;</span>H<span class="tag">&lt;sub&gt;</span>2<span class="tag">&lt;/sub&gt;</span>O e 2<span class="tag">&lt;sup&gt;</span>10<span class="tag">&lt;/sup&gt;</span>.<span class="tag">&lt;/p&gt;</span></code></pre>
+            <div class="example-box">
+                <p>A função é <code class="inline-code">alert()</code>.</p>
+                <p>H<sub>2</sub>O e 2<sup>10</sup>.</p>
+            </div>
+
+            <hr class="section-divider">
+
+            <h3>Tags de Links e Imagens</h3>
+
+            <h4>A Tag &lt;a&gt; (Âncora/Link)</h4>
+            <p>Cria um hyperlink. O atributo <code class="inline-code">href</code> (hypertext reference) define o destino do link. O atributo <code class="inline-code">target="_blank"</code> faz o link abrir em uma nova aba.</p>
+            <pre class="code-snippet"><code><span class="comment">&lt;!-- Link para um site externo --&gt;</span>
+<span class="tag">&lt;a <span class="attr">href=</span><span class="value">"https.google.com"</span> <span class="attr">target=</span><span class="value">"_blank"</span>&gt;</span>Visite o Google<span class="tag">&lt;/a&gt;</span>
+
+<span class="comment">&lt;!-- Link para uma seção interna da página --&gt;</span>
+<span class="tag">&lt;a <span class="attr">href=</span><span class="value">"#css"</span>&gt;</span>Ir para a Seção CSS<span class="tag">&lt;/a&gt;</span></code></pre>
+            <div class="example-box">
+                <a href="#" onclick="event.preventDefault()">Visite o Google (exemplo)</a>
+                <br>
+                <a href="#css">Ir para a Seção CSS (exemplo)</a>
+            </div>
+
+            <h4>A Tag &lt;img&gt; (Imagem)</h4>
+            <p>Incorpora uma imagem na página. É uma tag vazia. <code class="inline-code">src</code> é a fonte (source) da imagem. <code class="inline-code">alt</code> (alternative text) é crucial para acessibilidade, descrevendo a imagem para leitores de tela.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;img <span class="attr">src=</span><span class="value">"https/via.placeholder.com/150x50"</span> 
+     <span class="attr">alt=</span><span class="value">"Um retângulo cinza de 150 por 50 pixels"</span>&gt;</span></code></pre>
+            <div class="example-box">
+                <img src="https://via.placeholder.com/200x50?text=Exemplo+de+Imagem" alt="Um retângulo cinza de 200 por 50 pixels">
+            </div>
+
+            <hr class="section-divider">
+            
+            <h3>Tags de Listas</h3>
+            
+            <h4>&lt;ul&gt; (Lista Não Ordenada)</h4>
+            <p>Cria uma lista de itens com marcadores (bullets), onde a ordem não importa. Cada item é uma tag <code class="inline-code">&lt;li&gt;</code> (list item).</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;ul&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Maçã<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Banana<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ul&gt;</span></code></pre>
+            <div class="example-box">
+                <ul>
+                  <li>Maçã</li>
+                  <li>Banana</li>
+                </ul>
+            </div>
+            
+            <h4>&lt;ol&gt; (Lista Ordenada)</h4>
+            <p>Cria uma lista de itens numerada, onde a ordem importa. Também usa <code class="inline-code">&lt;li&gt;</code> para cada item.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;ol&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Primeiro passo<span class="tag">&lt;/li&gt;</span>
+  <span class="tag">&lt;li&gt;</span>Segundo passo<span class="tag">&lt;/li&gt;</span>
+<span class="tag">&lt;/ol&gt;</span></code></pre>
+            <div class="example-box">
+                <ol>
+                  <li>Primeiro passo</li>
+                  <li>Segundo passo</li>
+                </ol>
+            </div>
+            
+            <h4>&lt;dl&gt;, &lt;dt&gt;, &lt;dd&gt; (Lista de Descrição)</h4>
+            <p>Cria uma lista de termos e suas definições. <code class="inline-code">&lt;dl&gt;</code> é a lista, <code class="inline-code">&lt;dt&gt;</code> é o termo, e <code class="inline-code">&lt;dd&gt;</code> é a definição.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;dl&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>HTML<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>A linguagem de marcação para a web.<span class="tag">&lt;/dd&gt;</span>
+  <span class="tag">&lt;dt&gt;</span>CSS<span class="tag">&lt;/dt&gt;</span>
+  <span class="tag">&lt;dd&gt;</span>A linguagem de estilo para a web.<span class="tag">&lt;/dd&gt;</span>
+<span class="tag">&lt;/dl&gt;</span></code></pre>
+            <div class="example-box">
+                <dl>
+                  <dt>HTML</dt>
+                  <dd>A linguagem de marcação para a web.</dd>
+                  <dt>CSS</dt>
+                  <dd>A linguagem de estilo para a web.</dd>
+                </dl>
+            </div>
+            
+            <hr class="section-divider">
+
+            <h3>Tags de Tabela (Expandido)</h3>
+            <p>Tabelas são usadas para exibir dados em formato de grade (linhas e colunas). A tag <code class="inline-code">&lt;caption&gt;</code> fornece um título para a tabela.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;table&gt;</span>
+  <span class="tag">&lt;caption&gt;</span>Inventário da Loja<span class="tag">&lt;/caption&gt;</span>
+  <span class="tag">&lt;thead&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;th&gt;</span>ITEM<span class="tag">&lt;/th&gt;</span>
+      <span class="tag">&lt;th&gt;</span>TIPO<span class="tag">&lt;/th&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/thead&gt;</span>
+  <span class="tag">&lt;tbody&gt;</span>
+    <span class="tag">&lt;tr&gt;</span>
+      <span class="tag">&lt;td&gt;</span>Poção<span class="tag">&lt;/td&gt;</span>
+      <span class="tag">&lt;td&gt;</span>Consumível<span class="tag">&lt;/td&gt;</span>
+    <span class="tag">&lt;/tr&gt;</span>
+  <span class="tag">&lt;/tbody&gt;</span>
+<span class="tag">&lt;/table&gt;</span></code></pre>
+            <div class="example-box">
+                <table class="modern-table">
+                    <caption>Inventário da Loja</caption>
+                    <thead>
+                        <tr>
+                            <th>ITEM</th>
+                            <th>TIPO</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Poção</td>
+                            <td>Consumível</td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+
+            <hr class="section-divider">
+            
+            <h3>Tags de Formulário (Expandido)</h3>
+            <p>Além de <code class="inline-code">&lt;input&gt;</code>, temos outras tags importantes para coletar dados do usuário.</p>
+
+            <h4>A Tag &lt;textarea&gt;</h4>
+            <p>Cria uma caixa de texto de múltiplas linhas, ideal para mensagens ou comentários.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;label <span class="attr">for=</span><span class="value">"comentario"</span>&gt;</span>Comentário:<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;textarea <span class="attr">id=</span><span class="value">"comentario"</span> <span class="attr">rows=</span><span class="value">"4"</span> <span class="attr">cols=</span><span class="value">"50"</span>&gt;</span><span class="tag">&lt;/textarea&gt;</span></code></pre>
+            <div class="example-box">
+                <label for="comentario-ex">Comentário:</label><br>
+                <textarea id="comentario-ex" rows="3" style="width:100%" placeholder="Digite aqui..."></textarea>
+            </div>
+            
+            <h4>Tags &lt;select&gt; e &lt;option&gt;</h4>
+            <p>Cria uma lista suspensa (dropdown). <code class="inline-code">&lt;select&gt;</code> é o contêiner e cada <code class="inline-code">&lt;option&gt;</code> é um item da lista.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;label <span class="attr">for=</span><span class="value">"classe"</span>&gt;</span>Escolha sua classe:<span class="tag">&lt;/label&gt;</span>
+<span class="tag">&lt;select <span class="attr">id=</span><span class="value">"classe"</span> <span class="attr">name=</span><span class="value">"classe"</span>&gt;</span>
+  <span class="tag">&lt;option <span class="attr">value=</span><span class="value">"guerreiro"</span>&gt;</span>Guerreiro<span class="tag">&lt;/option&gt;</span>
+  <span class="tag">&lt;option <span class="attr">value=</span><span class="value">"mago"</span>&gt;</span>Mago<span class="tag">&lt;/option&gt;</span>
+<span class="tag">&lt;/select&gt;</span></code></pre>
+            <div class="example-box">
+                <label for="classe-ex">Escolha sua classe:</label>
+                <select id="classe-ex" name="classe">
+                  <option value="guerreiro">Guerreiro</option>
+                  <option value="mago">Mago</option>
+                  <option value="arqueiro">Arqueiro</option>
+                </select>
+            </div>
+            
+            <h4>Tags &lt;fieldset&gt; e &lt;legend&gt;</h4>
+            <p>Agrupam campos de formulário relacionados. <code class="inline-code">&lt;fieldset&gt;</code> desenha uma caixa ao redor, e <code class="inline-code">&lt;legend&gt;</code> dá um título (legenda) para essa caixa.</p>
+            <pre class="code-snippet"><code><span class="tag">&lt;fieldset&gt;</span>
+  <span class="tag">&lt;legend&gt;</span>Informações Pessoais<span class="tag">&lt;/legend&gt;</span>
+  <span class="tag">&lt;label <span class="attr">for=</span><span class="value">"nome"</span>&gt;</span>Nome:<span class="tag">&lt;/label&gt;</span>
+  <span class="tag">&lt;input <span class="attr">type=</span><span class="value">"text"</span> <span class="attr">id=</span><span class="value">"nome"</span>&gt;</span>
+<span class="tag">&lt;/fieldset&gt;</span></code></pre>
+            <div class="example-box">
+                <fieldset>
+                  <legend>Informações Pessoais</legend>
+                  <label for="nome-ex">Nome:</label>
+                  <input type="text" id="nome-ex" style="width: 100%;">
+                </fieldset>
+            </div>
+
+            <hr class="section-divider">
+
+            <h3>Tags de Estrutura Semântica</h3>
+            <p>Estas tags definem a estrutura e o significado das seções da sua página, substituindo o uso excessivo de <code class="inline-code">&lt;div&gt;</code>.</p>
+            <ul>
+                <li><code class="inline-code">&lt;header&gt;</code>: O cabeçalho da página ou de uma seção (contém logo, navegação).</li>
+                <li><code class="inline-code">&lt;nav&gt;</code>: Contém os links de navegação principais.</li>
+                <li><code class="inline-code">&lt;main&gt;</code>: Define o conteúdo principal e único da página.</li>
+                <li><code class="inline-code">&lt;section&gt;</code>: Define uma seção temática de conteúdo.</li>
+                <li><code class="inline-code">&lt;article&gt;</code>: Define um conteúdo independente e auto-contido (ex: um post de blog, um produto).</li>
+                <li><code class="inline-code">&lt;aside&gt;</code>: Define conteúdo lateral (sidebar), como links relacionados ou biografias.</li>
+                <li><code class="inline-code">&lt;footer&gt;</code>: O rodapé da página ou de uma seção (contém copyright, links de contato).</li>
+            </ul>
+            <p><strong>Exemplo:</strong> A própria estrutura desta página (header, nav, main, footer) é um exemplo de HTML semântico!</p>
+
+            <hr class="section-divider">
+
+            <h3>O Formulário Interativo</h3>
+            <p>Este é o formulário com o qual nosso JavaScript irá interagir. Tente enviar uma senha com menos de 6 caracteres para ver a validação do JS em ação.</p>
+            
+            <form id="meu-formulario" class="modern-form">
+                <div class="form-group">
+                    <label for="nome">Nome:</label>
+                    <input type="text" id="nome" name="nome" placeholder="Digite seu nome...">
+                </div>
+                <div class="form-group">
+                    <label for="email">Email:</label>
+                    <input type="email" id="email" name="email" placeholder="seu@email.com">
+                </div>
+                <div class="form-group">
+                    <label for="senha">Senha (min. 6 chars):</label>
+                    <input type="password" id="senha" name="senha" placeholder="Crie uma senha segura">
+                </div>
+                <button type="submit" class="button-primary">Enviar</button>
+                <p id="msg-erro" class="error-message"></p>
+            </form>
+            
+        </section>
+
+<section id="css" class="card">
+            <h2>CSS: O Estilo</h2>
+
+            <p>
+                O <strong>CSS</strong> (Cascading Style Sheets) é a linguagem que usamos para <strong>estilizar</strong> o HTML. Se o HTML é o esqueleto, o CSS é a pele, as roupas e as cores. Ele controla fontes, cores, espaçamentos, posicionamento e até mesmo animações.
+            </p>
+            
+            <h3>Como Adicionar CSS</h3>
+            <p>Existem três maneiras de adicionar CSS a uma página, sendo a "Externa" a mais recomendada.</p>
+            <ul>
+                <li><strong>Externo (External):</strong> Um arquivo <code class="inline-code">.css</code> separado, linkado no <code class="inline-code">&lt;head&gt;</code>. (É o que estamos fazendo neste projeto).</li>
+                <li><strong>Interno (Internal):</strong> Usando a tag <code class="inline-code">&lt;style&gt;</code> dentro do <code class="inline-code">&lt;head&gt;</code> do HTML.</li>
+                <li><strong>Na Linha (Inline):</strong> Usando o atributo <code class="inline-code">style="..."</code> diretamente em uma tag HTML. (Não recomendado).</li>
+            </ul>
+            <pre class="code-snippet"><code><span class="comment">&lt;!-- 1. Externo (Recomendado) --&gt;</span>
+<span class="tag">&lt;link <span class="attr">rel=</span><span class="value">"stylesheet"</span> <span class="attr">href=</span><span class="value">"style.css"</span>&gt;</span>
+
+<span class="comment">&lt;!-- 2. Interno --&gt;</span>
+<span class="tag">&lt;style&gt;</span>
+  <span class="selector">body</span> { <span class="property">background-color</span>: <span class="value">#121212</span>; }
+<span class="tag">&lt;/style&gt;</span>
+
+<span class="comment">&lt;!-- 3. Inline (Evite) --&gt;</span>
+<span class="tag">&lt;p <span class="attr">style=</span><span class="value">"color: red;"</span>&gt;</span>Texto vermelho.<span class="tag">&lt;/p&gt;</span></code></pre>
+            
+            <hr class="section-divider">
+
+            <h3>Seletores Essenciais</h3>
+            <p>Seletores são a forma como o CSS "encontra" os elementos HTML para estilizar.</p>
+            
+            <h4>Básicos (Tipo, Classe, ID)</h4>
+            <ul>
+                <li><strong>Tipo:</strong> Seleciona todas as tags de um tipo. (ex: <code class="inline-code">p</code>)</li>
+                <li><strong>Classe:</strong> Seleciona todos os elementos com <code class="inline-code">class="..."</code>. (ex: <code class="inline-code">.card</code>)</li>
+                <li><strong>ID:</strong> Seleciona o *único* elemento com <code class="inline-code">id="..."</code>. (ex: <code class="inline-code">#meu-formulario</code>)</li>
+            </ul>
+            
+            <h4>Combinadores</h4>
+            <ul>
+                <li><strong>Descendente (espaço):</strong> <code class="inline-code">.card p</code> (Seleciona todo <code class="inline-code">&lt;p&gt;</code> *dentro* de <code class="inline-code">.card</code>).</li>
+                <li><strong>Filho Direto (>):</strong> <code class="inline-code">.card > h3</code> (Seleciona todo <code class="inline-code">&lt;h3&gt;</code> que é *filho direto* de <code class="inline-code">.card</code>).</li>
+                <li><strong>Irmão Adjacente (+):</strong> <code class="inline-code">h3 + p</code> (Seleciona o <code class="inline-code">&lt;p&gt;</code> que vem *imediatamente após* um <code class="inline-code">&lt;h3&gt;</code>).</li>
+            </ul>
+            
+            <h4>Pseudo-classes</h4>
+            <p>Seleciona elementos com base em seu estado ou posição.</p>
+            <ul>
+                <li><code class="inline-code">:hover</code>: Quando o mouse está sobre o elemento.</li>
+                <li><code class="inline-code">:focus</code>: Quando o elemento (ex: input) está focado.</li>
+                <li><code class="inline-code">:nth-child(n)</code>: Seleciona o n-ésimo filho (ex: <code class="inline-code">li:nth-child(odd)</code> para linhas ímpares).</li>
+            </ul>
+            <pre class="code-snippet"><code><span class="comment">/* O botão fica azul escuro quando o mouse passa por cima */</span>
+<span class="selector">.button-primary:hover</span> {
+  <span class="property">background-color</span>: <span class="value">var(--cor-secundaria)</span>;
+}
+
+<span class="comment">/* A 3ª linha da lista fica azul */</span>
+<span class="selector">li:nth-child(3)</span> {
+  <span class="property">color</span>: <span class="value">var(--cor-primaria)</span>;
+}</code></pre>
+            
+            <h4>Pseudo-elementos</h4>
+            <p>Estiliza uma *parte* específica de um elemento.</p>
+            <ul>
+                <li><code class="inline-code">::before</code>: Insere conteúdo *antes* do conteúdo do elemento.</li>
+                <li><code class="inline-code">::after</code>: Insere conteúdo *depois* do conteúdo do elemento.</li>
+            </ul>
+            <pre class="code-snippet"><code><span class="comment">/* Adiciona uma seta "➡️" antes de cada item da lista */</span>
+<span class="selector">.modern-list li::before</span> {
+  <span class="property">content</span>: <span class="value">"➡️ "</span>;
+}</code></pre>
+            
+            <hr class="section-divider">
+
+            <h3>O Box Model (Modelo de Caixa)</h3>
+            <p>Todo elemento HTML é uma caixa. O Box Model é como calculamos seu tamanho: <strong>Conteúdo</strong> + <strong>Padding</strong> (espaço interno) + <strong>Border</strong> (borda) + <strong>Margin</strong> (espaço externo).</p>
+            <pre class="code-snippet"><code><span class="selector">.minha-caixa</span> {
+  <span class="property">margin</span>: <span class="value">20px</span>;  <span class="comment">/* Espaço fora da borda */</span>
+  <span class="property">padding</span>: <span class="value">30px</span>; <span class="comment">/* Espaço entre a borda e o conteúdo */</span>
+  <span class="property">border</span>: <span class="value">5px solid white</span>;
+  <span class="property">background-color</span>: <span class="value">var(--cor-primaria)</span>;
+}</code></pre>
+            <div class="box-model-demo">
+                <div class="margin">MARGEM
+                    <div class="border">BORDA
+                        <div class="padding">PADDING
+                            <div class="content">
+                                CONTEÚDO
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <hr class="section-divider">
+
+            <h3>Propriedade 'display'</h3>
+            <p>A propriedade <code class="inline-code">display</code> é a mais importante do CSS para controlar layout. Ela define como um elemento se comporta.</p>
+            <ul>
+                <li><code class="inline-code">display: block;</code>: (Padrão para <code class="inline-code">&lt;div&gt;</code>) Ocupa 100% da largura, começa em nova linha.</li>
+                <li><code class="inline-code">display: inline;</code>: (Padrão para <code class="inline-code">&lt;span&gt;</code>) Ocupa só o espaço necessário, fica na mesma linha.</li>
+                <li><code class="inline-code">display: inline-block;</code>: Um híbrido. Fica na mesma linha (inline) mas aceita <code class="inline-code">width</code> e <code class="inline-code">height</code> (block).</li>
+                <li><code class="inline-code">display: flex;</code>: Ativa o <strong>Flexbox</strong> (veja abaixo).</li>
+                <li><code class="inline-code">display: grid;</code>: Ativa o <strong>Grid Layout</strong> (veja abaixo).</li>
+                <li><code class="inline-code">display: none;</code>: Esconde o elemento completamente (o JS usa isso).</li>
+            </ul>
+            
+            <hr class="section-divider">
+            
+            <h3>Propriedade 'position'</h3>
+            <p>A propriedade <code class="inline-code">position</code> controla como um elemento é posicionado, permitindo "quebrar" o fluxo normal.</p>
+            
+            <h4>position: relative e absolute</h4>
+            <p><code class="inline-code">relative</code>: O elemento fica "relativo" à sua posição original. Usado como âncora para filhos "absolutos".</p>
+            <p><code class="inline-code">absolute</code>: O elemento é removido do fluxo e posicionado em relação ao "pai relativo" mais próximo.</p>
+            <pre class="code-snippet"><code><span class="selector">.pai-relativo</span> {
+  <span class="property">position</span>: <span class="value">relative</span>;
+  <span class="property">height</span>: <span class="value">100px</span>;
+}
+<span class="selector">.filho-absoluto</span> {
+  <span class="property">position</span>: <span class="value">absolute</span>;
+  <span class="property">bottom</span>: <span class="value">10px</span>;
+  <span class="property">right</span>: <span class="value">10px</span>;
+}</code></pre>
+            <div class="example-box">
+                <div class="demo-position-relative">
+                    Eu sou o contêiner PAI (position: relative).
+                    <div class="demo-position-absolute">
+                        Eu sou o FILHO (position: absolute) e estou "preso" a 10px do canto inferior direito do meu pai.
+                    </div>
+                </div>
+            </div>
+
+            <h4>position: fixed e sticky</h4>
+            <p><code class="inline-code">fixed</code>: O elemento é posicionado em relação à janela do navegador (ex: um menu que fica fixo no topo). Fica "preso" mesmo com a rolagem.</p>
+            <p><code class="inline-code">sticky</code>: Um híbrido. Ele se comporta como <code class="inline-code">static</code> (normal) até que a rolagem o faça atingir um ponto específico (ex: <code class="inline-code">top: 0</code>), então ele se torna <code class="inline-code">fixed</code>.</p>
+             <pre class="code-snippet"><code><span class="comment">/* Este menu ficaria preso no topo da tela */</span>
+<span class="selector">.menu-fixo</span> {
+  <span class="property">position</span>: <span class="value">fixed</span>;
+  <span class="property">top</span>: <span class="value">0</span>;
+  <span class="property">width</span>: <span class="value">100%</span>;
+}
+<span class="comment">/* Este título de seção "grudaria" no topo ao rolar */</span>
+<span class="selector">h2</span> {
+  <span class="property">position</span>: <span class="value">sticky</span>;
+  <span class="property">top</span>: <span class="value">0</span>;
+}</code></pre>
+            
+            <hr class="section-divider">
+
+            <h3>Flexbox Layout</h3>
+            <p><code class="inline-code">display: flex</code> é um modelo de layout 1D (linha ou coluna) perfeito para alinhar e distribuir itens.</p>
+            <pre class="code-snippet"><code><span class="selector">.flex-container</span> {
+  <span class="property">display</span>: <span class="value">flex</span>;
+  <span class="property">justify-content</span>: <span class="value">space-around</span>; <span class="comment">/* Distribui espaço horizontalmente */</span>
+  <span class="property">align-items</span>: <span class="value">center</span>;      <span class="comment">/* Alinha verticalmente no centro */</span>
+  <span class="property">height</span>: <span class="value">150px</span>;
+}
+<span class="selector">.flex-item</span> {
+  <span class="property">width</span>: <span class="value">50px</span>;
+}</code></pre>
+            <div class="example-box">
+                <div class="demo-flex-container">
+                    <div class="demo-flex-item" style="height: 40px;">Item 1</div>
+                    <div class="demo-flex-item" style="height: 80px;">Item 2</div>
+                    <div class="demo-flex-item" style="height: 30px;">Item 3</div>
+                </div>
+            </div>
+            
+            <hr class="section-divider">
+
+            <h3>Grid Layout</h3>
+            <p><code class="inline-code">display: grid</code> é um modelo de layout 2D (linhas E colunas), ideal para layouts de página complexos.</p>
+            <pre class="code-snippet"><code><span class="selector">.grid-container</span> {
+  <span class="property">display</span>: <span class="value">grid</span>;
+  <span class="comment">/* Cria 3 colunas de tamanho igual (1fr = 1 fração) */</span>
+  <span class="property">grid-template-columns</span>: <span class="value">1fr 1fr 1fr</span>;
+  <span class="property">gap</span>: <span class="value">10px</span>; <span class="comment">/* Espaço entre os itens */</span>
+}
+<span class="selector">.grid-item-span-2</span> {
+  <span class="comment">/* Faz este item ocupar 2 colunas */</span>
+  <span class="property">grid-column</span>: <span class="value">span 2</span>;
+}</code></pre>
+            <div class="example-box">
+                <div class="demo-grid-container">
+                    <div class="demo-grid-item">Item 1 (1fr)</div>
+                    <div class="demo-grid-item">Item 2 (1fr)</div>
+                    <div class="demo-grid-item">Item 3 (1fr)</div>
+                    <div class="demo-grid-item demo-grid-item-span-2">Item 4 (span 2)</div>
+                    <div class="demo-grid-item">Item 5 (1fr)</div>
+                </div>
+            </div>
+            
+            <hr class="section-divider">
+
+            <h3>Unidades de Medida</h3>
+            <ul>
+                <li><strong>Absolutas:</strong> <code class="inline-code">px</code> (pixels). Tamanho fixo.</li>
+                <li><strong>Relativas à Fonte:</strong> <code class="inline-code">em</code> (relativo ao pai), <code class="inline-code">rem</code> (relativo à raiz <code class="inline-code">&lt;html&gt;</code>). Ótimas para acessibilidade.</li>
+                <li><strong>Relativas à Viewport:</strong> <code class="inline-code">%</code> (do pai), <code class="inline-code">vw</code> (da largura da janela), <code class="inline-code">vh</code> (da altura da janela).</li>
+            </ul>
+
+            <hr class="section-divider">
+            
+            <h3>Design Responsivo (Media Queries)</h3>
+            <p>Usamos <code class="inline-code">@media</code> para aplicar estilos diferentes dependendo das características do dispositivo, como o tamanho da tela.</p>
+            <pre class="code-snippet"><code><span class="comment">/* Estilos padrão (desktop primeiro) */</span>
+<span class="selector">.container</span> {
+  <span class="property">width</span>: <span class="value">900px</span>;
+}
+
+<span class="comment">/* Se a tela for MENOR que 768px... */</span>
+<span class="keyword">@media</span> (<span class="property">max-width</span>: <span class="value">768px</span>) {
+  <span class="selector">.container</span> {
+    <span class="comment">/* ...o container ocupa 100% da largura. */</span>
+    <span class="property">width</span>: <span class="value">100%</span>;
+  }
+}</code></pre>
+            
+        </section>
+
+ </section>
+
+        <section id="js" class="card">
+            <h2>JavaScript: A Interatividade</h2>
+            
+            <p>
+                O <strong>JavaScript (JS)</strong> é a <strong>linguagem de programação</strong> do navegador. Se o HTML é o esqueleto e o CSS é a pele, o JS são os músculos e o cérebro. Ele permite que a página reaja a ações do usuário (eventos), manipule o HTML/CSS (o DOM) e dê 'vida' à página.
+            </p>
+
+            <h3>Onde Adicionar JavaScript</h3>
+            <ul>
+                <li><strong>Externo (Recomendado):</strong> Em um arquivo <code class="inline-code">.js</code>, linkado no final do <code class="inline-code">&lt;body&gt;</code> ou no <code class="inline-code">&lt;head&gt;</code> com o atributo <code class="inline-code">defer</code>.</li>
+                <li><strong>Interno:</strong> Dentro de uma tag <code class="inline-code">&lt;script&gt;</code> no HTML.</li>
+            </ul>
+             <pre class="code-snippet"><code><span class="comment">&lt;!-- 1. Externo com 'defer' (Recomendado) --&gt;</span>
+<span class="tag">&lt;script <span class="attr">src=</span><span class="value">"script.js"</span> <span class="attr">defer</span>&gt;</span><span class="tag">&lt;/script&gt;</span>
+
+<span class="comment">&lt;!-- 2. Interno (Evite para scripts grandes) --&gt;</span>
+<span class="tag">&lt;script&gt;</span>
+  <span class="variable">console</span>.log(<span class="value">"Olá do script interno!"</span>);
+<span class="tag">&lt;/script&gt;</span></code></pre>
+
+            <hr class="section-divider">
+
+            <h3>Variáveis, Tipos de Dados e Operadores</h3>
+            
+            <h4>Variáveis (let vs. const)</h4>
+            <p>Variáveis são "contêineres" para armazenar dados. Use <code class="inline-code">const</code> por padrão. Se você precisar que o valor mude, use <code class="inline-code">let</code>.</p>
+            
+            <h4>Tipos de Dados Primitivos</h4>
+            <ul>
+                <li><strong>String:</strong> Texto (ex: <code class="inline-code">"Olá mundo"</code>)</li>
+                <li><strong>Number:</strong> Números (ex: <code class="inline-code">101</code> ou <code class="inline-code">3.14</code>)</li>
+                <li><strong>Boolean:</strong> Verdadeiro ou falso (ex: <code class="inline-code">true</code> ou <code class="inline-code">false</code>)</li>
+                <li><strong>Null:</strong> Representa a ausência intencional de um valor.</li>
+                <li><strong>Undefined:</strong> Representa uma variável que não foi definida.</li>
+            </ul>
+
+            <h4>Operadores</h4>
+            <p>Símbolos que executam operações em valores e variáveis.</p>
+            <ul>
+                <li><strong>Aritméticos:</strong> <code class="inline-code">+</code> (soma), <code class="inline-code">-</code> (subtração), <code class="inline-code">*</code> (multiplicação), <code class="inline-code">/</code> (divisão).</li>
+                <li><strong>Atribuição:</strong> <code class="inline-code">=</code> (atribui um valor, ex: <code class="inline-code">let x = 10;</code>).</li>
+                <li><strong>Comparação (Importante):</strong>
+                    <ul>
+                        <li><code class="inline-code">==</code> (Igualdade "solta"): Compara apenas o valor. (ex: <code class="inline-code">5 == "5"</code> é `true`) - **Evite!**</li>
+                        <li><code class="inline-code">===</code> (Igualdade "estrita"): Compara o valor E o tipo. (ex: <code class="inline-code">5 === "5"</code> é `false`) - **Use este!**</li>
+                        <li><code class="inline-code">!=</code> (Diferente "solto") e <code class="inline-code">!==</code> (Diferente "estrito").</li>
+                        <li><code class="inline-code">&gt;</code> (maior que), <code class="inline-code">&lt;</code> (menor que), <code class="inline-code">&gt;=</code>, <code class="inline-code">&lt;=</code></li>
+                    </ul>
+                </li>
+            </ul>
+            <pre class="code-snippet"><code><span class="keyword">let</span> <span class="variable">idade</span> = <span class="value">25</span>;
+<span class="keyword">let</span> <span class="variable">pontos</span> = <span class="value">10</span>;
+<span class="keyword">let</span> <span class="variable">total</span> = <span class="variable">pontos</span> * <span class="value">2</span>; <span class="comment">// total será 20</span>
+
+<span class="keyword">if</span> (<span class="variable">idade</span> &gt; <span class="value">18</span>) {
+  <span class="variable">console</span>.log(<span class="value">"Maior de idade"</span>);
+}</code></pre>
+            
+            <hr class="section-divider">
+
+            <h3>Funções</h3>
+            <p>Funções são blocos de código reutilizáveis que executam uma tarefa. Elas podem receber dados (parâmetros) e retornar um valor.</p>
+            <pre class="code-snippet"><code><span class="comment">// 1. Declaração de Função</span>
+<span class="keyword">function</span> <span class="function">saudacao</span>(<span class="variable">nome</span>) {
+  <span class="keyword">return</span> <span class="value">"Olá, "</span> + <span class="variable">nome</span> + <span class="value">"!"</span>;
+}
+
+<span class="comment">// 2. Chamando a Função</span>
+<span class="keyword">let</span> <span class="variable">mensagem</span> = <span class="function">saudacao</span>(<span class="value">"Ana"</span>); <span class="comment">// mensagem será "Olá, Ana!"</span>
+<span class="variable">console</span>.log(<span class="variable">mensagem</span>);</code></pre>
+            
+            <hr class="section-divider">
+
+            <h3>Objetos (Básico)</h3>
+            <p>Objetos são coleções de pares chave/valor, usados para agrupar dados relacionados.</p>
+            <pre class="code-snippet"><code><span class="comment">// Objeto Literal</span>
+<span class="keyword">const</span> <span class="variable">usuario</span> = {
+  <span class="property">nome</span>: <span class="value">"Carlos"</span>,
+  <span class="property">idade</span>: <span class="value">30</span>,
+  <span class="property">isAdmin</span>: <span class="value">true</span>,
+  <span class="property">saudar</span>: <span class="keyword">function</span>() {
+    <span class="variable">console</span>.log(<span class="value">"Oi, eu sou o "</span> + <span class="keyword">this</span>.<span class="property">nome</span>);
+  }
+};
+
+<span class="comment">// Acessando propriedades</span>
+<span class="variable">console</span>.log(<span class="variable">usuario</span>.<span class="property">nome</span>); <span class="comment">// "Carlos"</span>
+<span class="variable">usuario</span>.<span class="function">saudar</span>(); <span class="comment">// "Oi, eu sou o Carlos"</span></code></pre>
+
+            <hr class="section-divider">
+            
+            <h3>Condicionais (if / else)</h3>
+            <p>Executa blocos de código diferentes com base em uma condição (booleana).</p>
+            <pre class="code-snippet"><code><span class="keyword">let</span> <span class="variable">hora</span> = <span class="keyword">new</span> <span class="function">Date</span>().<span class="function">getHours</span>(); <span class="comment">// Pega a hora atual (0-23)</span>
+
+<span class="keyword">if</span> (<span class="variable">hora</span> &lt; <span class="value">12</span>) {
+  <span class="variable">console</span>.log(<span class="value">"Bom dia!"</span>);
+} <span class="keyword">else if</span> (<span class="variable">hora</span> &lt; <span class="value">18</span>) {
+  <span class="variable">console</span>.log(<span class="value">"Boa tarde!"</span>);
+} <span class="keyword">else</span> {
+  <span class="variable">console</span>.log(<span class="value">"Boa noite!"</span>);
+}</code></pre>
+            <div class="example-box">
+                <p>Clique no botão para executar um <code class="inline-code">if/else</code> com base na hora atual.</p>
+                <button id="btn-check-time" class="button-secondary">Verificar Hora (Demo)</button>
+                <p id="output-check-time" class="demo-js-output"></p>
+            </div>
+            
+            <hr class="section-divider">
+            
+            <h3>Loops (for)</h3>
+            <p>Loops são usados para executar uma ação repetidas vezes. O loop <code class="inline-code">for</code> é o mais comum.</p>
+            <pre class="code-snippet"><code><span class="keyword">let</span> <span class="variable">frutas</span> = [<span class="value">"Maçã"</span>, <span class="value">"Banana"</span>, <span class="value">"Laranja"</span>];
+
+<span class="comment">// O loop começa com i=0; continua ENQUANTO i < 3; incrementa i a cada rodada.</span>
+<span class="keyword">for</span> (<span class="keyword">let</span> <span class="variable">i</span> = <span class="value">0</span>; <span class="variable">i</span> &lt; <span class="variable">frutas</span>.<span class="property">length</span>; <span class="variable">i</span>++) {
+  <span class="variable">console</span>.log(<span class="variable">frutas</span>[<span class="variable">i</span>]); <span class="comment">// "Maçã", "Banana", "Laranja"</span>
+}</code></pre>
+            <div class="example-box">
+                <p>Clique para usar um loop <code class="inline-code">for</code> e preencher a lista abaixo.</p>
+                <button id="btn-run-loop" class="button-secondary">Rodar Loop (Demo)</button>
+                <ul id="output-loop-list" class="modern-list" style="margin-top: 10px;">
+                    </ul>
+            </div>
+            
+            <hr class="section-divider">
+
+            <h3>Interagindo com o DOM</h3>
+            <p>O DOM (Document Object Model) é a representação em árvore do seu HTML. O JS pode manipular o DOM para alterar dinamicamente o conteúdo, estilo ou estrutura da página.</p>
+
+            <h4>1. Encontrando Elementos</h4>
+            <ul>
+                <li><code class="inline-code">document.getElementById("meu-id")</code>: Rápido e específico, pega pelo ID.</li>
+                <li><code class="inline-code">document.querySelector(".minha-classe")</code>: Moderno e flexível, pega o *primeiro* elemento que bate com o seletor CSS (pode ser <code class="inline-code">#id</code>, <code class="inline-code">.classe</code>, <code class="inline-code">tag</code>, etc).</li>
+                <li><code class="inline-code">document.querySelectorAll(".minha-classe")</code>: Pega *todos* os elementos que batem com o seletor.</li>
+            </ul>
+
+            <h4>2. Alterando Conteúdo (innerHTML vs. textContent)</h4>
+            <p><code class="inline-code">textContent</code> insere texto puro (seguro). <code class="inline-code">innerHTML</code> insere HTML (pode ser inseguro se vier do usuário, mas é útil para renderizar tags).</p>
+            <pre class="code-snippet"><code><span class="keyword">const</span> <span class="variable">titulo</span> = <span class="variable">document</span>.querySelector(<span class="value">'h2'</span>);
+
+<span class="comment">// Apenas texto, seguro.</span>
+<span class="variable">titulo</span>.<span class="property">textContent</span> = <span class="value">"Novo Título (Texto)"</span>;
+
+<span class="comment">// Interpreta o HTML, mas pode ser inseguro.</span>
+<span class="variable">titulo</span>.<span class="property">innerHTML</span> = <span class="value">"&lt;i&gt;Novo Título (HTML)&lt;/i&gt;"</span>;</code></pre>
+             <div class="example-box">
+                <p id="demo-text-output">Este texto vai mudar.</p>
+                <button id="btn-demo-textcontent" class="button-secondary">Usar .textContent</button>
+                <button id="btn-demo-innerhtml" class="button-secondary">Usar .innerHTML</button>
+            </div>
+            
+            <h4>3. Alterando Estilos (style)</h4>
+            <p>Você pode alterar o CSS "inline" de um elemento usando a propriedade <code class="inline-code">.style</code>. Note que propriedades CSS com hífen (ex: <code class="inline-code">background-color</code>) viram "camelCase" (ex: <code class="inline-code">backgroundColor</code>).</p>
+            <pre class="code-snippet"><code><span class="keyword">const</span> <span class="variable">elemento</span> = <span class="variable">document</span>.querySelector(<span class="value">'#demo-style-box'</span>);
+<span class="variable">elemento</span>.<span class="property">style</span>.<span class="property">backgroundColor</span> = <span class="value">'#00aaff'</span>;
+<span class="variable">elemento</span>.<span class="property">style</span>.<span class="property">color</span> = <span class="value">'#000'</span>;</code></pre>
+            <div class="example-box">
+                <div id="demo-style-box" class="demo-js-box">Esta caixa vai mudar de cor.</div>
+                <button id="btn-demo-style" class="button-secondary">Mudar Estilo (Demo)</button>
+            </div>
+
+            <h4>4. Alterando Atributos (setAttribute)</h4>
+            <p>Você pode mudar atributos de um elemento, como o <code class="inline-code">src</code> de uma imagem ou o <code class="inline-code">href</code> de um link.</p>
+            <pre class="code-snippet"><code><span class="keyword">const</span> <span class="variable">botao</span> = <span class="variable">document</span>.querySelector(<span class="value">'#btn-demo-disabled'</span>);
+<span class="comment">// Adiciona o atributo 'disabled', desativando o botão</span>
+<span class="variable">botao</span>.<span class="function">setAttribute</span>(<span class="value">'disabled'</span>, <span class="value">'true'</span>);</code></pre>
+            <div class="example-box">
+                <button id="btn-demo-disable" class="button-secondary">Desabilitar o outro botão</button>
+                <button id="btn-demo-disabled" class="button-primary">Eu serei desabilitado</button>
+            </div>
+            
+            <hr class="section-divider">
+
+            <h3>Eventos Comuns</h3>
+            <p>Eventos são ações que o JS pode "ouvir". Usamos <code class="inline-code">.addEventListener(evento, funcao)</code>.</p>
+            <ul>
+                <li><code class="inline-code">'click'</code>: O usuário clica em um elemento.</li>
+                <li><code class="inline-code">'submit'</code>: O usuário envia um formulário. (Lembre-se do <code class="inline-code">event.preventDefault()</code>).</li>
+                <li><code class="inline-code">'mouseover'</code>: O mouse passa por cima de um elemento.</li>
+                <li><code class="inline-code">'keydown'</code>: O usuário pressiona uma tecla.</li>
+                <li><code class="inline-code">'DOMContentLoaded'</code>: O HTML foi completamente carregado. (Nosso script principal usa este).</li>
+            </ul>
+
+            <hr class="section-divider">
+
+            <h3>Exemplos Práticos (Nossos Projetos)</h3>
+            <p>Estes exemplos combinam tudo o que aprendemos. Eles são os principais exemplos interativos desta página.</p>
+            
+            <h4>Exemplo Prático 1: Toggle de Classe</h4>
+            <p>Usa um evento de <code class="inline-code">click</code> para adicionar ou remover a classe <code class="inline-code">.hidden</code> de um elemento.</p>
+            <button id="btn-toggle" class="button-secondary">Mostrar/Esconder Segredo</button>
+            <div id="div-escondida" class="hidden toggle-box">
+                <p>PARABÉNS! Você encontrou a área secreta!</p>
+            </div>
+
+            <h4>Exemplo Prático 2: Validação de Formulário</h4>
+            <p>Usa um evento de <code class="inline-code">submit</code>, <code class="inline-code">event.preventDefault()</code>, e lógica <code class="inline-code">if</code> para validar o formulário na seção HTML.</p>
+
+            <h4>Exemplo Prático 3: Criação de Elementos</h4>
+            <p>Usa <code class="inline-code">click</code>, <code class="inline-code">document.createElement('li')</code> e <code class="inline-code">.appendChild()</code> para adicionar itens dinamicamente.</p>
+            <button id="btn-adicionar" class="button-secondary">Adicionar Item à Lista</button>
+            <ul id="lista-demo" class="modern-list">
+                <li>Item 1 (Existente)</li>
+            </ul>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Website Explicativo. Criado no SENAC - Jovem Programador 2025 - Ronan H. Medeiros.</p>
+    </footer>
+
+</body>
+</html>

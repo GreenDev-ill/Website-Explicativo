@@ -1,0 +1,440 @@
+/* --- :ROOT (Variáveis Globais do Tema) --- */
+:root {
+    --cor-fundo: #121212;
+    --cor-card: #1e1e1e;
+    --cor-borda: #333333;
+    --cor-texto-principal: #e0e0e0;
+    --cor-texto-secundario: #aaaaaa;
+    --cor-titulo: #ffffff;
+    --cor-primaria: #00aaff;
+    --cor-secundaria: #0088cc;
+    --cor-erro: #ff4d4d;
+    
+    --fonte-principal: 'Roboto', -apple-system, BlinkMacSystemFont, "Segoe UI", Helvetica, Arial, sans-serif;
+    --fonte-codigo: 'Fira Code', Menlo, Monaco, Consolas, "Courier New", monospace;
+    
+    --raio-borda: 8px;
+    --sombra-card: 0 4px 12px rgba(0, 0, 0, 0.4);
+}
+
+/* --- RESET BÁSICO E PADRÕES GLOBAIS --- */
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+html { scroll-behavior: smooth; }
+body {
+    font-family: var(--fonte-principal);
+    background-color: var(--cor-fundo);
+    color: var(--cor-texto-principal);
+    line-height: 1.6; 
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+/* --- LAYOUT PRINCIPAL (HEADER, MAIN, FOOTER) --- */
+header, main, footer {
+    width: 100%;
+    max-width: 900px;
+    padding: 20px;
+}
+header {
+    text-align: center;
+    border-bottom: 1px solid var(--cor-borda);
+    padding-bottom: 20px;
+}
+header h1 {
+    color: var(--cor-titulo);
+    font-weight: 700;
+    margin-bottom: 15px;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px; 
+}
+nav a {
+    color: var(--cor-primaria);
+    text-decoration: none;
+    font-weight: 700;
+    padding: 5px 10px;
+    border-radius: 5px;
+    transition: background-color 0.2s ease-in-out;
+}
+nav a:hover {
+    background-color: var(--cor-borda);
+    color: var(--cor-titulo);
+}
+main { flex: 1; }
+footer {
+    text-align: center;
+    color: var(--cor-texto-secundario);
+    font-size: 0.9em;
+    border-top: 1px solid var(--cor-borda);
+    padding-top: 20px;
+    margin-top: 20px;
+}
+
+/* --- ESTILO DOS CARDS (SEÇÕES) --- */
+.card {
+    background-color: var(--cor-card);
+    border-radius: var(--raio-borda);
+    border: 1px solid var(--cor-borda);
+    padding: 25px;
+    margin-bottom: 25px;
+    box-shadow: var(--sombra-card);
+}
+.card h2 {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    font-size: 2em;
+    border-bottom: 2px solid var(--cor-primaria);
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+.card h3 {
+    color: var(--cor-titulo);
+    font-weight: 700;
+    font-size: 1.4em;
+    margin-top: 30px;
+    margin-bottom: 15px;
+}
+.card h4 {
+    color: var(--cor-primaria);
+    font-weight: 700;
+    font-size: 1.1em;
+    margin-top: 25px;
+    margin-bottom: 10px;
+}
+.card p { margin-bottom: 15px; }
+.card ul, .card ol {
+    margin-bottom: 15px;
+    padding-left: 20px; 
+}
+.card li { margin-bottom: 8px; }
+
+.section-divider {
+    border: 0;
+    border-top: 1px dashed var(--cor-borda);
+    margin: 30px 0;
+}
+
+/* --- CAIXA DE EXEMPLO RENDERIZADO --- */
+.example-box {
+    background-color: var(--cor-fundo); 
+    border: 1px solid var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: 15px;
+    margin-top: 10px;
+    /* Adicionado para conter elementos posicionados */
+    position: relative;
+    overflow: hidden; /* Esconde overflow de exemplos */
+}
+/* Estilos para elementos DENTRO da caixa de exemplo */
+.example-box h1 { font-size: 2em; }
+.example-box h2 { font-size: 1.5em; }
+.example-box h3 { font-size: 1.17em; }
+.example-box h4 { font-size: 1em; }
+.example-box h5 { font-size: 0.83em; }
+.example-box h6 { font-size: 0.67em; }
+.example-box h1, .example-box h2, .example-box h3, 
+.example-box h4, .example-box h5, .example-box h6 {
+    color: var(--cor-titulo); 
+    border: none;
+    padding: 0;
+    margin: 0 0 10px 0;
+}
+.example-box p { margin: 0; }
+.example-box a { color: var(--cor-primaria); }
+.example-box hr { border: 0; border-top: 1px solid var(--cor-borda); }
+.example-box ul, .example-box ol { padding-left: 25px; margin: 0; }
+.example-box dl dt { font-weight: 700; color: var(--cor-titulo); }
+.example-box dl dd { padding-left: 20px; margin-bottom: 10px; }
+.example-box textarea,
+.example-box select,
+.example-box input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    font-family: var(--fonte-principal);
+    font-size: 0.9em;
+    color: var(--cor-texto-principal);
+    background-color: #333;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    margin-top: 5px;
+}
+.example-box fieldset {
+    border: 1px dashed var(--cor-borda);
+    border-radius: var(--raio-borda);
+    padding: 15px;
+}
+.example-box legend {
+    color: var(--cor-titulo);
+    font-weight: 700;
+    padding: 0 5px;
+}
+
+/* --- [NOVO] EXEMPLOS DE CSS --- */
+
+/* Exemplo de Position */
+.demo-position-relative {
+    position: relative;
+    height: 120px;
+    background-color: #2a2a2a;
+    border: 1px dashed var(--cor-primaria);
+    padding: 10px;
+    border-radius: var(--raio-borda);
+}
+.demo-position-absolute {
+    position: absolute;
+    bottom: 10px;
+    right: 10px;
+    background-color: var(--cor-primaria);
+    color: var(--cor-fundo);
+    padding: 5px;
+    border-radius: 5px;
+    font-size: 0.9em;
+}
+
+/* Exemplo de Flexbox */
+.demo-flex-container {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    height: 150px;
+    background-color: #2a2a2a;
+    border-radius: var(--raio-borda);
+    padding: 10px;
+}
+.demo-flex-item {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    padding: 10px;
+    width: 60px;
+    text-align: center;
+    border-radius: 5px;
+}
+
+/* Exemplo de Grid */
+.demo-grid-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 10px;
+}
+.demo-grid-item {
+    background-color: var(--cor-secundaria);
+    color: var(--cor-fundo);
+    font-weight: 700;
+    padding: 15px;
+    text-align: center;
+    border-radius: 5px;
+}
+.demo-grid-item-span-2 {
+    grid-column: span 2;
+    background-color: var(--cor-primaria);
+}
+
+
+/* --- ESTILO DE SNIPPETS DE CÓDIGO --- */
+.inline-code {
+    font-family: var(--fonte-codigo);
+    background-color: #2d2d2d;
+    color: #c5c8c6;
+    padding: 2px 5px;
+    border-radius: 4px;
+    font-size: 0.9em;
+}
+.code-snippet {
+    font-family: var(--fonte-codigo);
+    background-color: #2d2d2d; 
+    color: #c5c8c6; 
+    padding: 15px;
+    border-radius: var(--raio-borda);
+    border: 1px solid #444;
+    overflow-x: auto; 
+    margin: 20px 0;
+    font-size: 0.9em;
+    line-height: 1.5;
+}
+/* Syntax Highlighting */
+.code-snippet .comment { color: #6a9955; }
+.code-snippet .tag { color: #569cd6; }
+.code-snippet .attr { color: #9cdcfe; }
+.code-snippet .value { color: #ce9178; }
+.code-snippet .selector { color: #d7ba7d; }
+.code-snippet .property { color: #9cdcfe; }
+.code-snippet .hex { color: #b5cea8; }
+.code-snippet .keyword { color: #c586c0; }
+.code-snippet .variable { color: #9cdcfe; }
+.code-snippet .function { color: #dcdcaa; }
+.code-snippet .keyword { color: #569cd6; } /* Ajuste para @media */
+
+
+/* --- FORMULÁRIOS MODERNOS (INTERATIVO) --- */
+.modern-form {
+    background-color: #252525;
+    padding: 20px;
+    border-radius: var(--raio-borda);
+    border: 1px solid var(--cor-borda);
+}
+.form-group { margin-bottom: 15px; }
+.form-group label {
+    display: block; 
+    font-weight: 700;
+    margin-bottom: 5px;
+    color: var(--cor-texto-principal);
+}
+.form-group input[type="text"],
+.form-group input[type="email"],
+.form-group input[type="password"] {
+    width: 100%;
+    padding: 10px 12px;
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    color: var(--cor-texto-principal);
+    background-color: #333;
+    border: 1px solid var(--cor-borda);
+    border-radius: 5px;
+    transition: border-color 0.2s, box-shadow 0.2s;
+}
+.form-group input:focus {
+    outline: none;
+    border-color: var(--cor-primaria);
+    box-shadow: 0 0 0 3px rgba(0, 170, 255, 0.2);
+}
+
+/* --- BOTÕES --- */
+.button-primary, .button-secondary {
+    font-family: var(--fonte-principal);
+    font-size: 1em;
+    font-weight: 700;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s, transform 0.1s;
+}
+.button-primary {
+    background-color: var(--cor-primaria);
+    color: #000;
+}
+.button-primary:hover { background-color: var(--cor-secundaria); }
+.button-secondary {
+    background-color: #333;
+    color: var(--cor-texto-principal);
+    border: 1px solid var(--cor-borda);
+}
+.button-secondary:hover { background-color: #444; }
+.button-primary:active, .button-secondary:active {
+    transform: scale(0.98);
+}
+
+/* --- ELEMENTOS DE EXEMPLO (JS) --- */
+.error-message {
+    color: var(--cor-erro);
+    font-weight: 700;
+    margin-top: 15px;
+    display: none; 
+}
+.error-input {
+    border-color: var(--cor-erro) !important; 
+    box-shadow: 0 0 0 3px rgba(255, 77, 77, 0.2) !important;
+}
+.toggle-box {
+    background-color: #252525;
+    border: 1px dashed var(--cor-primaria);
+    padding: 15px;
+    margin-top: 15px;
+    border-radius: var(--raio-borda);
+    color: var(--cor-primaria);
+    font-weight: 700;
+}
+.hidden { display: none; }
+.modern-list {
+    background-color: #252525;
+    padding: 15px;
+    border-radius: var(--raio-borda);
+    list-style-type: "➡️ "; 
+    padding-left: 30px;
+}
+.modern-list li { padding-left: 10px; }
+
+/* --- TABELAS MODERNAS --- */
+.modern-table {
+    width: 100%;
+    border-collapse: collapse; 
+    margin: 20px 0;
+    font-size: 0.95em;
+    box-shadow: var(--sombra-card);
+}
+.modern-table th, .modern-table td {
+    padding: 12px 15px;
+    text-align: left;
+    border-bottom: 1px solid var(--cor-borda);
+}
+.modern-table thead tr {
+    background-color: #252525; 
+    color: var(--cor-titulo);
+    font-weight: 700;
+}
+.modern-table tbody tr {
+    background-color: var(--cor-card);
+    transition: background-color 0.2s;
+}
+.modern-table tbody tr:nth-of-type(even) { background-color: #222; }
+.modern-table tbody tr:hover { background-color: #333; }
+.modern-table caption {
+    caption-side: top;
+    font-weight: 700;
+    color: var(--cor-titulo);
+    font-size: 1.1em;
+    padding: 10px;
+    text-align: left;
+}
+
+/* --- DEMO DO BOX MODEL --- */
+.box-model-demo {
+    text-align: center;
+    font-weight: 700;
+    font-size: 0.9em;
+    margin-top: 20px;
+}
+.margin {
+    background-color: rgba(255, 77, 77, 0.2); 
+    border: 2px dashed rgba(255, 77, 77, 0.8);
+    padding: 20px;
+}
+.border {
+    background-color: rgba(255, 165, 0, 0.2); 
+    border: 8px solid rgba(255, 165, 0, 0.8);
+    padding: 20px;
+}
+.padding {
+    background-color: rgba(0, 200, 0, 0.2); 
+    border: 2px dashed rgba(0, 200, 0, 0.8);
+    padding: 20px;
+}
+.content {
+    background-color: rgba(0, 170, 255, 0.3); 
+    border: 2px dashed rgba(0, 170, 255, 0.8);
+    padding: 20px;
+    color: var(--cor-titulo);
+}
+
+/* --- RESPONSIVIDADE --- */
+@media (max-width: 768px) {
+    body { font-size: 14px; }
+    header, main, footer { padding: 15px; }
+    .card { padding: 15px; }
+    .card h2 { font-size: 1.8em; }
+    .card h3 { font-size: 1.3em; }
+    .modern-table {
+        display: block;
+        overflow-x: auto;
+        white-space: nowrap;
+    }
+}
